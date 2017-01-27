@@ -1,0 +1,36 @@
+﻿@model IEnumerable<LoginTest.AUDITORIAS>
+
+@{
+    ViewBag.Title = "Auditoria";
+}
+
+<h2>Listado de Eventos de Auditoria</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ACCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIMESTAMP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USUARIOS.USUARIO)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIMESTAMP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USUARIOS.USUARIO)
+        </td>
+    </tr>
+}
+
+</table>
